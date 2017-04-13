@@ -12,7 +12,7 @@
 ;;     Update #: 0
 ;; URL: 
 ;; Doc URL: 
-;; Keywords: 
+;; Keywords: cursor
 ;; Compatibility: 
 ;; 
 ;; Features that might be required by this library:
@@ -53,6 +53,9 @@
   "Displaying text cursors in nox"
   :prefix "nwc/"
   :group 'display)
+
+(defvar saved-origin-cursor 'cursor-type
+  "Remembered original cursor type.")
 
 ;; prefix
 (defcustom nwc/tmux-escape-code-prefix "\ePtmux;\e"
