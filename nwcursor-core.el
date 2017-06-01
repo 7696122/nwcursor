@@ -1,52 +1,52 @@
 ;;; nwcursor-core.el --- new window cursor for emacs.
-;; 
+;;
 ;; Filename: nwcursor-core.el
-;; Description: 
-;; Author: 7696122 
+;; Description:
+;; Author: 7696122
 ;; Maintainer: 7696122
 ;; Created: Mon Oct 31 12:18:13 2016 (+0900)
-;; Version: 
+;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 
-;;           By: 
+;; Last-Updated:
+;;           By:
 ;;     Update #: 0
-;; URL: 
-;; Doc URL: 
+;; URL:
+;; Doc URL:
 ;; Keywords: cursor
-;; Compatibility: 
-;; 
+;; Compatibility:
+;;
 ;; Features that might be required by this library:
 ;;
 ;;   None
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;;; Commentary: 
-;; 
-;; 
-;; 
+;;
+;;; Commentary:
+;;
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Change Log:
-;; 
-;; 
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or (at
 ;; your option) any later version.
-;; 
+;;
 ;; This program is distributed in the hope that it will be useful, but
 ;; WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;; General Public License for more details.
-;; 
+;;
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-;; 
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Code:
 
 (defgroup nwcursor nil
@@ -185,7 +185,7 @@
 (defun nwc/set-cursor ()
   "echo -ne %s"
   (interactive)
-  (send-string-to-terminal 
+  (send-string-to-terminal
    (let ((nwc/type
           (if (listp cursor-type)
               (car cursor-type)
@@ -232,7 +232,7 @@
 ;;;###autoload
 (define-minor-mode nwcursor-mode
   ""
-  :lighter " █"
+  :lighter " _"
   :init-value nil
   :global t
   :group 'nwcursor
