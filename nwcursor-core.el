@@ -189,7 +189,7 @@
    (let ((nwc/type
           (if (listp cursor-type)
               (car cursor-type)
-            cursor-type)))
+            (if (eq cursor-type t) nwc/default-cursor cursor-type))))
      (cond ((or (eq nwc/type 'box)
                 (eq nwc/type 'hollow))
             (if (nwc/in-tmux?)
