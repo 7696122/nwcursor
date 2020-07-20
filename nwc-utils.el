@@ -45,34 +45,42 @@
 ;; 
 ;;; Code:
 
+;;;###autoload
 (defun nwc/in-dumb? ()
   "Running in dumb."
   (string= (getenv "TERM") "dumb"))
 
+;;;###autoload
 (defun nwc/in-iterm? ()
   "Running in iTerm."
   (string= (getenv "TERM_PROGRAM") "iTerm.app"))
 
+;;;###autoload
 (defun nwc/in-xterm? ()
   "Runing in xterm."
   (getenv "XTERM_VERSION"))
 
+;;;###autoload
 (defun nwc/in-gnome-terminal? ()
   "Running in gnome-terminal."
   (string= (getenv "COLORTERM") "gnome-terminal"))
 
+;;;###autoload
 (defun nwc/in-konsole? ()
   "Running in konsole."
   (getenv "KONSOLE_PROFILE_NAME"))
 
+;;;###autoload
 (defun nwc/in-apple-terminal? ()
   "Running in Apple Terminal"
   (string= (getenv "TERM_PROGRAM") "Apple_Terminal"))
 
+;;;###autoload
 (defun nwc/in-tmux? ()
   "Running in tmux."
   (getenv "TMUX"))
 
+;;;###autoload
 (defun nwc/get-current-gnome-profile-name ()
   "Return Current profile name of Gnome Terminal."
   ;; https://github.com/helino/current-gnome-terminal-profile/blob/master/current-gnome-terminal-profile.sh

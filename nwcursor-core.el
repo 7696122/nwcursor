@@ -49,6 +49,8 @@
 ;;
 ;;; Code:
 
+(require 'nwc-utils)
+
 (defgroup nwcursor nil
   "Displaying text cursors in nox"
   :prefix "nwc/"
@@ -217,12 +219,14 @@
                 nwc/escape-code-hbar-cursor)))
            (t "")))))
 
+;;;###autoload
 (defun nwc/turn-on ()
   "Enable changing cursor for no window"
   (interactive)
   (add-hook 'pre-command-hook 'nwc/set-cursor)
   (add-hook 'post-command-hook 'nwc/set-cursor))
 
+;;;###autoload
 (defun nwc/turn-off ()
   "Disable changing cursor for no window"
   (interactive)
@@ -237,11 +241,11 @@
   :global t
   :group 'nwcursor
   (cond
-   (noninteractive			; running a batch job
+   (noninteractive      ; running a batch job
     (setq nwcursor-mode nil))
-   (nwcursor-mode			; whitespace-mode on
+   (nwcursor-mode       ; whitespace-mode on
     (nwc/turn-on))
-   (t					; whitespace-mode off
+   (t           ; whitespace-mode off
     (nwc/turn-off))))
 
 (provide 'nwcursor-core)
